@@ -1,0 +1,391 @@
+<html>
+ <head>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            background-color: #f8f5f0;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            border: none;
+            margin-bottom: 20px;
+        }
+        .card img {
+            border-radius: 10px;
+        }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .card-text {
+            color: #888;
+        }
+        .btn-add-cart {
+            background-color: #f8f5f0;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+        }
+        .btn-add-cart i {
+            margin-right: 5px;
+        }
+        .cart-summary {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cart-summary h5 {
+            font-weight: bold;
+        }
+        .cart-summary .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-summary .item .price {
+            color: #888;
+        }
+        .cart-summary .total {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .btn-confirm {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+        .carbon-neutral {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .carbon-neutral i {
+            color: #5cb85c;
+            margin-right: 5px;
+        }
+        .order-confirmed {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .order-confirmed h2 {
+            font-size: 2rem;
+            color: #5cb85c;
+        }
+        .order-confirmed p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+        .order-confirmed .order-details {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+        .order-confirmed .order-details .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .order-confirmed .order-details .total {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .btn-new-order {
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <h2 class="mb-4">
+    Desserts
+   </h2>
+   <div class="row">
+    <div class="col-md-8">
+     <div class="row" id="dessert-list">
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Waffle with Berries" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/VYXCtsb94qKBCdsT1Rdkn0OGK1NBK1qEWot61MYLuVdEEY5E.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Waffle with Berries
+         </h5>
+         <p class="card-text">
+          $6.50
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Waffle with Berries', 6.50)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Vanilla Bean Crème Brûlée" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/J08pDmZevl27Ha59nhYzlEyP91MrLoXAMVmGNOybNx1LIwyJA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Vanilla Bean Crème Brûlée
+         </h5>
+         <p class="card-text">
+          $7.00
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Vanilla Bean Crème Brûlée', 7.00)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Macaron Mix of Five" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/5ePD7jDwAy0BB6Fis4yNiapkDXPtRTQl4SOSTCvpnVULIwyJA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Macaron Mix of Five
+         </h5>
+         <p class="card-text">
+          $8.00
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Macaron Mix of Five', 8.00)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Classic Tiramisu" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/sZDqKdZQQGIdNdR57vZXLbaWpfi7l6PjJXBIYTkh9JWJIwyJA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Classic Tiramisu
+         </h5>
+         <p class="card-text">
+          $5.50
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Classic Tiramisu', 5.50)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Pistachio Baklava" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/EjnhTBpRHu6QL9TaC405Q2KT8GLbEIteyV5FvYJ3UumNIwyJA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Pistachio Baklava
+         </h5>
+         <p class="card-text">
+          $4.00
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Pistachio Baklava', 4.00)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Lemon Meringue Pie" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/rthjBWd5BprlO94WhgDwWVKYffJChM9YJee9KC8IRVWiBBWOB.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Lemon Meringue Pie
+         </h5>
+         <p class="card-text">
+          $5.00
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Lemon Meringue Pie', 5.00)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Strawberry Shortcake" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/BRRyo5ofWOX2Zib8O8IXCrA8q3yCDkmhm9PMuvNqI3ecQglTA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Strawberry Shortcake
+         </h5>
+         <p class="card-text">
+          $6.00
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Strawberry Shortcake', 6.00)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Chocolate Brownie" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/EiFajNO97NoOOlsf4KlnkUhqqBqrsgivB7dbTaOQr2GNIwyJA.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Chocolate Brownie
+         </h5>
+         <p class="card-text">
+          $4.50
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Chocolate Brownie', 4.50)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-4">
+       <div class="card">
+        <img alt="Mint Chocolate Mousse" class="card-img-top" height="200" src="https://storage.googleapis.com/a1aa/image/63ObdRwD7T69KlunMbFalmIXyQPtL4lC7ZPhWU8VOwFFEY5E.jpg" width="300"/>
+        <div class="card-body text-center">
+         <h5 class="card-title">
+          Mint Chocolate Mousse
+         </h5>
+         <p class="card-text">
+          $5.50
+         </p>
+         <button class="btn btn-add-cart" onclick="addToCart('Mint Chocolate Mousse', 5.50)">
+          <i class="fas fa-shopping-cart">
+          </i>
+          Add to Cart
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-4">
+     <div class="cart-summary">
+      <h5>
+       Your Cart (<span id="cart-count">0</span>)
+      </h5>
+      <div id="cart-items">
+      </div>
+      <hr/>
+      <div class="total">
+       <span>
+        Order Total
+       </span>
+       <span id="order-total">
+        $0.00
+       </span>
+      </div>
+      <div class="carbon-neutral">
+       <i class="fas fa-leaf">
+       </i>
+       <span>
+        This is a carbon-neutral delivery
+       </span>
+      </div>
+      <button class="btn btn-confirm mt-3" onclick="confirmOrder()">
+       Confirm Order
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="order-confirmed" id="order-confirmed">
+   <h2>
+    Order Confirmed!
+   </h2>
+   <p>
+    Thank you for your purchase. Your delicious desserts are on their way!
+   </p>
+   <div class="order-details" id="order-details">
+   </div>
+   <button class="btn btn-new-order" onclick="startNewOrder()">
+    Start New Order
+   </button>
+  </div>
+  <script>
+   let cart = [];
+        function addToCart(name, price) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.quantity++;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCart();
+        }
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const orderTotal = document.getElementById('order-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                cartItems.innerHTML += `
+                    <div class="item">
+                        <span>${item.name}</span>
+                        <span class="price">${item.quantity}x @ $${item.price.toFixed(2)} $${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            cartCount.innerText = cart.length;
+            orderTotal.innerText = `$${total.toFixed(2)}`;
+        }
+        function confirmOrder() {
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById('order-confirmed').style.display = 'block';
+            const orderDetails = document.getElementById('order-details');
+            orderDetails.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                orderDetails.innerHTML += `
+                    <div class="item">
+                        <span>${item.name}</span>
+                        <span class="price">${item.quantity}x @ $${item.price.toFixed(2)} $${itemTotal.toFixed(2)}</span>
+                    </div>
+                `;
+            });
+            orderDetails.innerHTML += `
+                <hr/>
+                <div class="total">
+                    <span>Order Total</span>
+                    <span>$${total.toFixed(2)}</span>
+                </div>
+            `;
+        }
+        function startNewOrder() {
+            cart = [];
+            updateCart();
+            document.querySelector('.container').style.display = 'block';
+            document.getElementById('order-confirmed').style.display = 'none';
+        }
+  </script>
+ </body>
+</html>
